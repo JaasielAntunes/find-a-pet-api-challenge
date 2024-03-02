@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { OrgsRepository } from "@/repositories/orgs-repository";
 import { PetsRepository } from "@/repositories/pets-repository";
 import { Pet } from "@prisma/client";
 
@@ -16,7 +17,7 @@ interface CreatePetUseCaseResponse {
 }
 
 export class CreatePetUseCase {
-  constructor(private petsRepository: PetsRepository) { }
+  constructor(private petsRepository: PetsRepository, private orgsRepository: OrgsRepository,) { }
 
   async execute({
     name,
@@ -26,6 +27,12 @@ export class CreatePetUseCase {
     breed,
     org_id,
   }: CreatePetUseCaseRequest): Promise<CreatePetUseCaseResponse> {
+    const org = await this.orgsRepository.findById(org_id)
+
+    if (!org) {
+      throw new Error()
+    }
+
     const pet = await this.petsRepository.create({
       name,
       about,
