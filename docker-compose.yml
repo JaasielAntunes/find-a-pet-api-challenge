@@ -8,6 +8,6 @@ services:
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=find-a-pet-db
+      - POSTGRES_DB=findapetdb
     volumes:
       - polls_pg_data:/bitnami/postgresql
