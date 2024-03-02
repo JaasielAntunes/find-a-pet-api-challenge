@@ -7,11 +7,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Org {
+  id          String @id @default(uuid())
+  name        String
+  author_name String
+  email       String @unique
+  password    String
+  whatsapp    String
+
+  city   String
+  state  String
+  street String
+  cep    String
+
+  latitude  Decimal
+  longitude Decimal
+
+  pets Pet[]
+
+  @@map("orgs")
+}
+
 model Pet {
-  id    String  @id @default(uuid())
-  name  String
-  about String
-  age   String
-  type  String
-  breed String?
+  id     String  @id @default(uuid())
+  name   String
+  about  String
+  age    String
+  type   String
+  breed  String?
+  org_id String
+
+  org Org @relation(fields: [org_id], references: [id])
+
+  @@map("pets")
 }
