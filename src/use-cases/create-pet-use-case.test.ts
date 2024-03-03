@@ -5,7 +5,7 @@ import { CreatePetUseCase } from "@/use-cases/create-pet-use-case";
 import { makeOrg } from "tests/factories/org-factory";
 import { makePet } from "tests/factories/pet-factory";
 
-describe("Create Pet Use Case", () => {
+describe("Caso de uso para cadastrar um Pet", () => {
   let orgsRepository: InMemoryOrgsRepository;
   let petsRepository: InMemoryPetsRepository;
   let sut: CreatePetUseCase;
@@ -13,10 +13,10 @@ describe("Create Pet Use Case", () => {
   beforeEach(() => {
     orgsRepository = new InMemoryOrgsRepository();
     petsRepository = new InMemoryPetsRepository(orgsRepository);
-    sut = new CreatePetUseCase(orgsRepository, petsRepository);
+    sut = new CreatePetUseCase(petsRepository, orgsRepository);
   });
 
-  test("Deve ser possiível cadastrar um pet", async () => {
+  test("Deve ser possível cadastrar um pet", async () => {
     const org = await orgsRepository.create(makeOrg());
     const { pet } = await sut.execute(makePet({ org_id: org.id }));
 
