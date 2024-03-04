@@ -25,4 +25,8 @@ export class InMemoryOrgsRepository implements OrgsRepository {
   async findByEmail(email: string): Promise<Org | null> {
     return this.items.find((org) => org.email === email) || null;
   }
+
+  async findAll(): Promise<Org[]> {
+    return this.items;
+  }
 }
