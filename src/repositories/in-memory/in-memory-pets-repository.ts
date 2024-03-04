@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Pet, Prisma } from "@prisma/client";
-import { PetsRepository } from "../pets-repository";
+import { FindAllParams, PetsRepository } from "../pets-repository";
 import { randomUUID } from "node:crypto";
 import { InMemoryOrgsRepository } from "./in-memory-orgs-repository";
 
@@ -30,5 +30,21 @@ export class InMemoryPetsRepository implements PetsRepository {
 
   async findAll(): Promise<Pet[]> {
     return this.items;
+  }
+
+  async findAllByCity(params: FindAllParams): Promise<Pet[]> {
+    const orgsByCity = this.orgsRepository.items.filter(
+      (org) => org.city === params.city,
+    )
+
+    const pets = this.items
+      .filter((item) => orgsByCity.some((org) => org.id === item.org_id))
+      .filter((item) => (params.age ? item.age === params.age : true))
+      .filter((item) => (params.type ? item.type === params.type : true))
+      .filter((item) =>
+        params.breed ? item.breed === params.breed : true,
+      )
+
+    return pets;
   }
 }

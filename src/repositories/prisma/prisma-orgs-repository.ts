@@ -18,7 +18,7 @@ export class PrismaOrgsRepository implements OrgsRepository {
     return org;
   }
 
-  async findAll(): Promise<Org[]> {
+  async findAllOrgs(): Promise<Org[]> {
     const orgs = await prisma.org.findMany();
     return orgs;
   }
