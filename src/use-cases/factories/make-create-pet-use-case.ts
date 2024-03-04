@@ -4,7 +4,7 @@ import { PrismaOrgsRepository } from "@/repositories/prisma/prisma-orgs-reposito
 
 export function makeCreatePetUseCase() {
   return new CreatePetUseCase(
-    new PrismaPetsRepository(),
     new PrismaOrgsRepository(),
+    new PrismaPetsRepository(),
   );
 }
