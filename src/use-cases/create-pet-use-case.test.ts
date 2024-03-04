@@ -4,6 +4,7 @@ import { InMemoryPetsRepository } from "@/repositories/in-memory/in-memory-pets-
 import { CreatePetUseCase } from "@/use-cases/create-pet-use-case";
 import { makeOrg } from "tests/factories/org-factory";
 import { makePet } from "tests/factories/pet-factory";
+import { OrgNotFoundError } from "./errors/org-not-found-error";
 
 describe("Caso de uso para cadastrar um Pet", () => {
   let orgsRepository: InMemoryOrgsRepository;
@@ -29,6 +30,6 @@ describe("Caso de uso para cadastrar um Pet", () => {
 
     await petsRepository.create(pet);
 
-    await expect(sut.execute(pet)).rejects.toBeInstanceOf(Error);
+    await expect(sut.execute(pet)).rejects.toBeInstanceOf(OrgNotFoundError);
   });
 });
