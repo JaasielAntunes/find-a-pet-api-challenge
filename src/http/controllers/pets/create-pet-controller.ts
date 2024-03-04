@@ -3,10 +3,10 @@ import { makeCreatePetUseCase } from "@/use-cases/factories/make-create-pet-use-
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 
-const bodySchema = z.object({
-  name: z.string(),
+const petBodySchema = z.object({
+  name: z.string().min(3).max(15),
   about: z.string(),
-  age: z.string(),
+  age: z.string().max(2),
   type: z.string(),
   breed: z.string(),
 });
@@ -15,7 +15,7 @@ export async function createPetController(
   req: FastifyRequest,
   res: FastifyReply,
 ) {
-  const body = bodySchema.parse(req.body);
+  const body = petBodySchema.parse(req.body);
 
   const createPetUseCase = makeCreatePetUseCase();
 
