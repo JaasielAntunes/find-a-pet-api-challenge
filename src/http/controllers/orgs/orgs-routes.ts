@@ -7,6 +7,6 @@ import { nearbyOrgsController } from "./nearby-orgs-controller";
 export async function orgsRoutes(app: FastifyInstance) {
   app.post("/orgs", createOrgController);
   app.post("/orgs/authenticate", authenticateOrgController);
-  app.get("/orgs/ find-all", findAllOrgsController);
+  app.get("/orgs/find-all", findAllOrgsController);
   app.get("/orgs/nearby", nearbyOrgsController);
 }
