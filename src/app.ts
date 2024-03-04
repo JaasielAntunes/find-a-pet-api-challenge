@@ -4,6 +4,7 @@ import { env } from "./env";
 import { ZodError } from "zod";
 import fastifyCookie from "@fastify/cookie";
 import { petsRoutes } from "./http/controllers/pets/pets-routes";
+import { orgsRoutes } from "./http/controllers/orgs/orgs-routes";
 
 export const app = fastify();
 
@@ -17,6 +18,7 @@ app.register(fastifyJwt, {
 app.register(fastifyCookie);
 
 app.register(petsRoutes);
+app.register(orgsRoutes);
 
 app.setErrorHandler((error, req, res) => {
   if (error.code === "FST_JWT_NO_AUTHORIZATION_IN_COOKIE") {

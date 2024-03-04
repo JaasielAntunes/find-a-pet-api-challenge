@@ -14,7 +14,7 @@ describe("Caso de uso para cadastrar um Pet", () => {
   beforeEach(() => {
     orgsRepository = new InMemoryOrgsRepository();
     petsRepository = new InMemoryPetsRepository(orgsRepository);
-    sut = new CreatePetUseCase(petsRepository, orgsRepository);
+    sut = new CreatePetUseCase(orgsRepository, petsRepository);
   });
 
   test("Deve ser possível cadastrar um pet", async () => {

@@ -10,7 +10,7 @@ const createOrgBodySchema = z.object({
   password: z.string().min(7).max(20),
   whatsapp: z.string().max(14),
   city: z.string().min(4).max(20),
-  state: z.string().min(4).max(10),
+  state: z.string().min(4).max(15),
   street: z.string().min(4).max(20),
   cep: z.string().max(10),
   latitude: z

@@ -17,7 +17,7 @@ interface CreatePetUseCaseResponse {
 }
 
 export class CreatePetUseCase {
-  constructor(private petsRepository: PetsRepository, private orgsRepository: OrgsRepository,) { }
+  constructor(private orgsRepository: OrgsRepository, private petsRepository: PetsRepository) { }
 
   async execute({
     name,
