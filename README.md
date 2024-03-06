@@ -56,6 +56,7 @@ mas realizei consultas e desta forma chegava a resolução do problema.
 - Dotenv
 - Dayjs
 - Fakerjs
+- Vitest
 
 ---
 
