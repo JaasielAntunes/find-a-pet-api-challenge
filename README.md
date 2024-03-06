@@ -50,6 +50,7 @@ mas realizei consultas e desta forma chegava a resolução do problema.
 - Fastify
 - Fastify JWT
 - Prisma
+- PostgreSQL
 - Zod
 - Docker
 - Typescript
