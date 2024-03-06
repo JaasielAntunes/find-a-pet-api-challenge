@@ -12,7 +12,7 @@
 
 A aplicação desenvolvida consiste em uma API para adoção de animais e foi aplicada boas práticas de código limpo, padrão de arquitetura e de projeto bem como conceitos do SOLID e testes.
 Foi de grande importância o desenvolvimento desta aplicação, pois pude colocar em prática todos os conceitos aprendidos no módulo estudado. Encontrei algumas dificuldades durante o desenvolvimento,
-mas realizei consultas e desta forma chegava a resolução do problema. 
+mas realizei consultas e desta forma chegando a resolução do problema. 
 
 ---
 
