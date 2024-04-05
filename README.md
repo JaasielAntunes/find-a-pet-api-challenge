@@ -1,5 +1,5 @@
 <h1 align="center">
-  A API Find A Pet é uma aplicação back-end desenvolvida como resolução de um desafio referente ao módulo API Node.js com SOLID da formação Node.js da Rocketseat.
+  A API Find A Pet é uma aplicação back-end desenvolvida como resolução de um desafio referente ao módulo API Node.js com SOLID da formação Node.js da <a href="https://app.rocketseat.com.br/home">Rocketseat</a>.
 </h1>
 
 <p align="center">
