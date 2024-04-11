@@ -45,7 +45,7 @@ mas realizei consultas e desta forma chegando a resolução do problema.
 
 ---
 
-## 💻 Tecnologias utilizadas
+## 💻 Tecnologias
 
 - Fastify
 - Fastify JWT
