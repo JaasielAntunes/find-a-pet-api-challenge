@@ -53,6 +53,7 @@ mas realizei consultas e desta forma chegando a resolução do problema.
 - PostgreSQL
 - Zod
 - Docker
+- JavaScript
 - Typescript
 - Dotenv
 - Dayjs
